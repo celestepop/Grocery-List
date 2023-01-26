@@ -11,9 +11,9 @@ public class Main {
         byte option = 3;
         float total = 0.0f;
 
-        while (option != 0) {
-            System.out.println("Welcome to your Grocery List!");
+        System.out.println("Welcome to your Grocery List!");
 
+        while (option != 0) {
             System.out.println("\nChoose an option:");
             System.out.println("\t0. Quit");
             System.out.println("\t1. View list");
