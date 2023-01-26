@@ -55,10 +55,10 @@ public class Main {
         for (Item item : list) {
             if (item.getItemName().equals(name)){
                 price = item.getItemPrice();
-                list.remove(item);
+                // list.remove(item);
             }
         }
-        // list.removeIf(List-> List.getItemName().equals(name));
+        list.removeIf(List-> List.getItemName().equals(name));
 
         return price;
     }
@@ -86,8 +86,9 @@ public class Main {
             float price = item.getItemPrice();
             System.out.printf("%-14s %-14.2f\n", name, price);
         }
-        System.out.println("---------end of list---------\n");
-        System.out.printf("Subtotal: %15f\n", subtotal);
-        System.out.printf("Total: %15f\n", (subtotal *tax) + subtotal);
+        System.out.println("---------end of list---------");
+        System.out.printf("Subtotal: %-18.2f\n", subtotal);
+        System.out.printf("Taxes: %-18.2f\n", subtotal * tax);
+        System.out.printf("Total: %-18.2f\n\n", (subtotal * tax) + subtotal);
     }
 }
