@@ -88,8 +88,8 @@ public class Main {
         }
         // Display totals
         System.out.println("---------end of list---------");
-        System.out.printf("Subtotal: %-18.2f\n", subtotal);
-        System.out.printf("Taxes: %-18.2f\n", subtotal * tax);
-        System.out.printf("Total: %-18.2f\n\n", (subtotal * tax) + subtotal);
+        System.out.printf("Subtotal: %15.2f\n", subtotal);
+        System.out.printf("Taxes: %18.2f\n", subtotal * tax);
+        System.out.printf("Total: %18.2f\n\n", (subtotal * tax) + subtotal);
     }
 }
