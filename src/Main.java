@@ -3,18 +3,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    // List<Item> GroceryList;
-    // final tax = 0.07f;
-    
-    public Main() {
-            // GroceryList  = new ArrayList<Item>();
-            // option = 3;
-    }
-        
+    // Constructor
+    public Main() {}
         
     public static void main(String[] args) throws Exception {
         ArrayList<Item> GroceryList  = new ArrayList<Item>();
         byte option = 3;
+        float total = 0.0f;
 
         while (option != 0) {
             System.out.println("Welcome to your Grocery List!");
@@ -36,15 +31,15 @@ public class Main {
                     break;
                 case 1:
                     // View list
-                    display(GroceryList);
+                    display(GroceryList, total);
                     break;
                 case 2:
                     // Add item to list
-                    addItem(GroceryList, inputScanner);
+                    total += addItem(GroceryList, inputScanner);
                     break;
                 case 3:
                     // Remove item from list
-                    removeItem(GroceryList, inputScanner);
+                    total -= removeItem(GroceryList, inputScanner);
                     break;
                 default:
                     System.out.println("Switch case defaulted!");
@@ -53,15 +48,22 @@ public class Main {
         }
     }
 
-    public static void removeItem(ArrayList<Item> list, Scanner in) {
+    public static float removeItem(ArrayList<Item> list, Scanner in) {
         // find item 
         String name = System.console().readLine("Name of item to remove > ");  // Read user input
-        list.removeIf(List-> List.getItemName().equals(name));
+        float price = 0.0f;
+        for (Item item : list) {
+            if (item.getItemName().equals(name)){
+                price = item.getItemPrice();
+                list.remove(item);
+            }
+        }
+        // list.removeIf(List-> List.getItemName().equals(name));
+
+        return price;
     }
 
-    public static void addItem(ArrayList<Item> List, Scanner in) {
-        // Scanner in = new Scanner(System.in); // Prep read line
-        
+    public static float addItem(ArrayList<Item> List, Scanner in) {
         String name = System.console().readLine("Name of new item > ");  // Read user input
         
         String priceStr = System.console().readLine("Price of item > ");  // Read user input
@@ -69,10 +71,13 @@ public class Main {
         System.out.println("\n");
 
         List.add(new Item(name, price));
+
+        return price;
     }
 
-    public static void display(ArrayList<Item> list) {
-        // display list
+    public static void display(ArrayList<Item> list, float subtotal) {
+        // display list        
+        float tax = 0.07f;
         System.out.println("        MY GROCERY LIST");
         System.out.println("Item           Price"); // setwidth = 15
 
@@ -82,5 +87,7 @@ public class Main {
             System.out.printf("%-14s %-14.2f\n", name, price);
         }
         System.out.println("---------end of list---------\n");
+        System.out.printf("Subtotal: %15f\n", subtotal);
+        System.out.printf("Total: %15f\n", (subtotal *tax) + subtotal);
     }
 }
