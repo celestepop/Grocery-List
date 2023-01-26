@@ -1,10 +1,11 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This java program was started as a way to learn a new language as well as learn how to create an app. Up until this project, I only knew the more common object-oriented languages like Python and C++. I have become more familiar with objects throughout the project, as well.
 
-{Provide a description of the software that you wrote to demonstrate the Java language.}
+This program was written with the end goal of being a good teammate as I work on creating an Andriod app for keeping track of groceries. Therefore, the theme is similar. This software will allow you create a shopping list that also shows the total expected cost of your groceries. Since Java is an object-oriented language, I used a class to create list of items with their price. This would make it easier to keep the item's name and price together.
 
-{Describe your purpose for writing this software.}
+Since going to the store to buy groceries is a common task, I thought this would be a good program. Before, I would make a list on my phone and then had to use my calculator separately to get the expected cost with taxes included. Now, I just need to add the items and it will give me the total. 
+
 
 {Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
 
@@ -12,21 +13,17 @@
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+I used Visual Studio Code to write and create the files as well as create the repository. As said before, Java is an object-oriented language, so I took advantage of its ability to create objects through classes. I also used the ArrayList and Scanner libraries to create an array list of Item objects and allow input, respectively.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [W3 Schools - Java](https://www.w3schools.com/java/default.asp)
+- [Geeks for Geeks](https://www.geeksforgeeks.org/java/?ref=shm)
+- [Stack Overflow](https://stackoverflow.com/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
+Things to fix, improve, and/or add in the future:
 
-- Item 1
-- Item 2
-- Item 3
+- Create a GUI (Graphical User Interface) for better usability
+- Create it as a web app to use from my phone
