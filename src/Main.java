@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-// import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -23,7 +22,6 @@ public class Main {
             Scanner inputScanner = new Scanner(System.in); // Prep read line
             System.out.print("Option > ");
             option = inputScanner.nextByte();  // Read user input
-            // inputScanner.close();
 
             switch(option){
                 case 0:
@@ -49,13 +47,13 @@ public class Main {
     }
 
     public static float removeItem(ArrayList<Item> list, Scanner in) {
-        // find item 
-        String name = System.console().readLine("Name of item to remove > ");  // Read user input
+        // Read user input
+        String name = System.console().readLine("Name of item to remove > "); 
         float price = 0.0f;
+        // Find item 
         for (Item item : list) {
             if (item.getItemName().equals(name)){
                 price = item.getItemPrice();
-                // list.remove(item);
             }
         }
         list.removeIf(List-> List.getItemName().equals(name));
@@ -64,28 +62,31 @@ public class Main {
     }
 
     public static float addItem(ArrayList<Item> List, Scanner in) {
-        String name = System.console().readLine("Name of new item > ");  // Read user input
-        
-        String priceStr = System.console().readLine("Price of item > ");  // Read user input
+        // Read user input
+        String name = System.console().readLine("Name of new item > ");  
+        String priceStr = System.console().readLine("Price of item > ");
         float price = Float.parseFloat(priceStr);
         System.out.println("\n");
 
+        // Add new item object
         List.add(new Item(name, price));
 
         return price;
     }
 
     public static void display(ArrayList<Item> list, float subtotal) {
-        // display list        
+        // Display header       
         float tax = 0.07f;
         System.out.println("        MY GROCERY LIST");
-        System.out.println("Item           Price"); // setwidth = 15
+        System.out.println("Item           Price");
 
+        // Display list
         for (Item item : list) {
             String name = item.getItemName();
             float price = item.getItemPrice();
             System.out.printf("%-14s %-14.2f\n", name, price);
         }
+        // Display totals
         System.out.println("---------end of list---------");
         System.out.printf("Subtotal: %-18.2f\n", subtotal);
         System.out.printf("Taxes: %-18.2f\n", subtotal * tax);
