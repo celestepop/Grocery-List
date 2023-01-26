@@ -7,9 +7,7 @@ This program was written with the end goal of being a good teammate as I work on
 Since going to the store to buy groceries is a common task, I thought this would be a good program. Before, I would make a list on my phone and then had to use my calculator separately to get the expected cost with taxes included. Now, I just need to add the items and it will give me the total. 
 
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Grocery List Demo Video](https://youtu.be/-EkQkv8ckF4)
 
 # Development Environment
 
